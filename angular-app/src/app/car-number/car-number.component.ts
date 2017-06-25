@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from '../car.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-car-number',
   templateUrl: './car-number.component.html',

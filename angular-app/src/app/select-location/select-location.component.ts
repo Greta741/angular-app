@@ -13,6 +13,7 @@ export class SelectLocationComponent implements OnInit {
   carNumber: string;
   location: Location;
   zoom: number = 15;
+  title: string = 'Your current position';
 
   constructor(
     private carService: CarService,

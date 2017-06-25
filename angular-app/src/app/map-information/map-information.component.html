@@ -1,3 +1,31 @@
-<p>
-  map-information works!
-</p>
+<div>
+  <h4>Tech. pagalbos preliminarus atvykimo laikas {{helpInformation.estimatedTime}}</h4>
+  <agm-map 
+    *ngIf="location; else noLocation"
+    [latitude]="location.latitude"
+    [longitude]="location.longitude"
+    [zoom]="zoom">
+        <agm-marker 
+        [latitude]="location.latitude"
+        [longitude]="location.longitude"
+        ></agm-marker>
+        <agm-marker 
+        [latitude]="helpLocation.latitude"
+        [longitude]="helpLocation.longitude"
+        [iconUrl]="iconUrl"
+        ></agm-marker>
+    </agm-map>
+    <br>
+    <ng-template #noLocation>
+        <p>Negalima nustatyti Jūsų buvimo vietos.</p>
+    </ng-template>
+
+  <div>Pas Jus važiuoja {{helpInformation.user.name}} {{helpInformation.user.lastName}} {{helpInformation.user.phoneNumber}} </div>
+  <button class="btn btn-primary" type="button">Skambinti</button>
+  <hr />
+  <ul>
+    <li *ngFor="let link of helpInformation.urls">
+      <a target="_blank" [href]="link.url">{{link.name}}</a>
+    </li>
+  </ul>
+</div>
