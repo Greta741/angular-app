@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-car-number',
   templateUrl: './car-number.component.html',
+  styleUrls: ['./car-number.component.css']
 })
 export class CarNumberComponent implements OnInit {
 

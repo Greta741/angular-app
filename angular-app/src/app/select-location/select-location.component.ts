@@ -6,14 +6,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-select-location',
   templateUrl: './select-location.component.html',
-  styleUrls: ['./select-location.component.css']
 })
 export class SelectLocationComponent implements OnInit {
 
   carNumber: string;
   location: Location;
   zoom: number = 15;
-  title: string = 'Your current position';
 
   constructor(
     private carService: CarService,
@@ -22,7 +20,7 @@ export class SelectLocationComponent implements OnInit {
 
   ngOnInit() {
     this.carNumber = this.carService.getCarNumber();
-    this.getLocation().then(location => this.setLocation(location)); 
+    this.getLocation().then(position => this.setLocation(position)); 
   }
 
   getLocation() {
@@ -44,7 +42,9 @@ export class SelectLocationComponent implements OnInit {
   }
 
   onButtonClickNext() {
-    this.carService.setUserLocation(this.location);
+    if (this.location) {
+      this.carService.setUserLocation(this.location);
+    }
     this.router.navigateByUrl('/mapinformation');
   }
 

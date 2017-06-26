@@ -42,7 +42,7 @@ export class CarService {
             return;
         }
         const oldLocation = this.helpLocation;
-        for (let i = 1; i < 100; i++) {
+        for (let i = 1; i < 110; i++) {
             setTimeout(() => {
                 this.helpLocation.latitude = oldLocation.latitude - i*0.000001;
                 this.helpLocation.longitude = oldLocation.longitude - i*0.000001;

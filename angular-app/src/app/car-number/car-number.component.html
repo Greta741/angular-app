@@ -1,7 +1,12 @@
-<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3">
+<div class="text-center">
   <h1>Įveskite mašinos nr.</h1>
-  <input [(ngModel)]="carNumber" class="form-control" placeholder="Mašinos nr."><br>
+  <input
+    [(ngModel)]="carNumber"
+    (keyup.enter)="onButtonClickNext()"
+    class="form-control"
+    placeholder="Mašinos nr.">
+  <br>
   <p *ngIf=error class="text-danger" >Neįvestas mašinos nr!</p>
-  <button (click)="onButtonClickNext()"  type="button" class="btn btn-success">Toliau</button><br>
+  <button (click)="onButtonClickNext()"  type="submit" class="btn btn-success">Toliau</button><br>
   <a>Reikia pagalbos?</a>
 </div>

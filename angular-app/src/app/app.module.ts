@@ -5,11 +5,11 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { CarNumberComponent } from './car-number/car-number.component';
-import { CarService }          from './car.service';
-
-import { AppRoutingModule }     from './app-routing.module';
 import { SelectLocationComponent } from './select-location/select-location.component';
 import { MapInformationComponent } from './map-information/map-information.component';
+
+import { CarService }          from './car.service';
+import { AppRoutingModule }     from './app-routing.module';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { MapInformationComponent } from './map-information/map-information.compo
     AppComponent,
     CarNumberComponent,
     SelectLocationComponent,
-    MapInformationComponent
+    MapInformationComponent,
   ],
   imports: [
     BrowserModule,

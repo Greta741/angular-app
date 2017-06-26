@@ -1,3 +1,21 @@
 ul {
     list-style-type: none;
+    text-align: left;
+}
+
+.user-information {
+    display: inline-block;
+}
+
+.user-information p {
+    margin: 5px 10px 0 0;
+    float: left;
+}
+
+.user-information button {
+    float: left;
+}
+
+hr {
+    border-top-color: gray;
 }
