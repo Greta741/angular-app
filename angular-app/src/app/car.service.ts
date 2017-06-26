@@ -7,7 +7,6 @@ export class CarService {
     carNumber: string;
     userLocation: Location;
     helpLocation: Location;
-    helpInformation;
 
     getCarNumber(): string {
         return this.carNumber;
@@ -41,11 +40,14 @@ export class CarService {
         if (!this.helpLocation) {
             return;
         }
-        const oldLocation = this.helpLocation;
-        for (let i = 1; i < 110; i++) {
+        const oldLocation = {
+            latitude: this.helpLocation.latitude,
+            longitude: this.helpLocation.longitude
+        }
+        for (let i = 0; i < 100; i++) {
             setTimeout(() => {
-                this.helpLocation.latitude = oldLocation.latitude - i*0.000001;
-                this.helpLocation.longitude = oldLocation.longitude - i*0.000001;
+                this.helpLocation.latitude = oldLocation.latitude - i*0.00005;
+                this.helpLocation.longitude = oldLocation.longitude - i*0.00005;
             }, 300*i);
         }
     }
